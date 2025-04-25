@@ -1,0 +1,16 @@
+
+
+CREATE TABLE production.UserLogin (
+    LoginId int NOT NULL AUTO_INCREMENT,
+    UserName varchar(200) NOT NULL,
+    password varchar(200) Not Null,
+    email varchar(200) Not Null,
+    active char(1) Not Null Default 'Y',
+    CreatedDate date ,
+	CONSTRAINT UserLogin PRIMARY KEY (LoginId,UserName,email)
+);
+
+ALTER TABLE `production`.`UserLogin` 
+ADD UNIQUE INDEX `UserName_UNIQUE` (`UserName` ASC) VISIBLE,
+ADD UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE;
+;
